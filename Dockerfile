@@ -34,5 +34,5 @@ RUN echo ' https_port 443' >>  /etc/squid/squid.conf
 RUN echo ' acl SSL_ports port 22' >>  /etc/squid/squid.conf
 RUN echo ' acl Safe_ports port 22' >>  /etc/squid/squid.conf
 RUN echo ' coredump_dir /var/spool/squid' >>  /etc/squid/squid.conf
-EXPOSE 80
+EXPOSE 80 443
 CMD  /1.sh
