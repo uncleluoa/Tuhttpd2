@@ -30,6 +30,7 @@ RUN echo ' http_access allow all' >>  /etc/squid/squid.conf
 RUN echo 'include /etc/squid/conf.d/*  ' >>  /etc/squid/squid.conf
 RUN echo 'http_access allow localhost ' >>  /etc/squid/squid.conf
 RUN echo ' http_port 80' >>  /etc/squid/squid.conf
+RUN echo ' https_port 443' >>  /etc/squid/squid.conf
 RUN echo ' acl SSL_ports port 22' >>  /etc/squid/squid.conf
 RUN echo ' acl Safe_ports port 22' >>  /etc/squid/squid.conf
 RUN echo ' coredump_dir /var/spool/squid' >>  /etc/squid/squid.conf
