@@ -1,6 +1,6 @@
 FROM ubuntu
 RUN apt update
-RUN apt install ssh wget npm nginx -y
+RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm nginx -y
 RUN  npm install -g wstunnel
 RUN mkdir /run/sshd 
 RUN wget https://raw.githubusercontent.com/jinshulumengchuang/Tuhttpd2/main/default
