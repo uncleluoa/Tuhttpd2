@@ -1,14 +1,18 @@
-FROM mysql
+FROM debian
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install  php apache2 wget git curl php-curl php-mysql -y
-RUN mkdir -p /var/www/html
-RUN git clone https://github.com/kalcaddle/KodExplorer.git
-RUN mv KodExplorer /var/www/html/kod
-RUN chmod 777 /var/www/html/ -R
-RUN echo 'MYSQL_ROOT_PASSWORD=root' >/1.sh
-RUN echo 'mysqld' >>/1.sh
-RUN echo 'apachectl -D FOREGROUND' >>/1.sh
+RUN apt install ssh wget npm nginx -y
+RUN  npm install -g wstunnel
+RUN mkdir /run/sshd 
+RUN wget https://raw.githubusercontent.com/jinshulumengchuang/Tuhttpd2/main/default
+RUN rm /etc/nginx/sites-enabled/default
+RUN mv default /etc/nginx/sites-enabled/
+RUN echo 'Is Tutu!' >/usr/share/nginx/html/index.html
+RUN echo 'service nginx restart' >>/1.sh
+RUN echo 'service ssh restart' >>/1.sh
+RUN echo 'wstunnel -s 0.0.0.0:80 ' >>/1.sh
+RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
+RUN echo root:Tu!192168|chpasswd
 RUN chmod 755 /1.sh
 EXPOSE 80
-CMD /1.sh
+CMD  /1.sh 
 
