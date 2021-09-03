@@ -9,10 +9,10 @@ RUN rm /etc/nginx/sites-enabled/default
 RUN mv default /etc/nginx/sites-enabled/
 RUN echo 'Is Tutu!' >/usr/share/nginx/html/index.html
 RUN echo 'wstunnel -s 0.0.0.0:8181 & ' >>/1.sh
-RUN echo 'service nginx restart' >>/1.sh
+RUN echo 'nginx' >>/1.sh
 RUN echo '/usr/sbin/sshd -D' >>/1.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:Tu!192168|chpasswd
 RUN chmod 755 /1.sh
-EXPOSE 80
+EXPOSE 800
 CMD  /1.sh 
