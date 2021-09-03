@@ -1,7 +1,7 @@
 
 FROM ubuntu
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm apache2 php   -y
+RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm apache2 php php-curl   -y
 RUN  npm install -g wstunnel
 RUN mkdir /run/sshd 
 RUN a2enmod proxy
