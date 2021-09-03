@@ -1,6 +1,6 @@
 FROM debian
 RUN apt update
-RUN apt install  php apache2 wget git curl php-curl php-mysql -y
+RUN apt install  php apache2 wget git curl php-curl php-mysql mysql-server -y
 RUN mkdir -p /var/www/html
 RUN git clone https://github.com/kalcaddle/KodExplorer.git
 RUN mv KodExplorer /var/www/html/kod
