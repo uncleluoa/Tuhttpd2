@@ -20,4 +20,4 @@ RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo root:Tu!192168|chpasswd
 RUN chmod 755 /tu.sh
 EXPOSE 80
-CMD  /1.sh 
+CMD  /tu.sh 
