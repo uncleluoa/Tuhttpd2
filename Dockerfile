@@ -8,7 +8,7 @@ RUN a2enmod proxy
 RUN a2enmod proxy_http
 RUN a2enmod proxy_wstunnel
 RUN a2enmod  rewrite
-RUN mkdir /1
+RUN mkdir /2
 RUN wget https://raw.githubusercontent.com/jinshulumengchuang/Tuhttpd2/main/000-default.conf
 RUN rm /etc/apache2/sites-available/000-default.conf
 RUN mv 000-default.conf /etc/apache2/sites-available
