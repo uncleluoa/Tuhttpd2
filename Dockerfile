@@ -1,4 +1,5 @@
 FROM debian
+RUN echo TUTU >/1
 RUN apt update
 RUN apt install ssh wget npm nginx -y
 RUN  npm install -g wstunnel
