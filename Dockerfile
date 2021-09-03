@@ -1,5 +1,4 @@
-FROM debian
-RUN echo TUTU >/1
+FROM ubuntu
 RUN apt update
 RUN apt install ssh wget npm nginx -y
 RUN  npm install -g wstunnel
@@ -7,11 +6,11 @@ RUN mkdir /run/sshd
 RUN wget https://raw.githubusercontent.com/jinshulumengchuang/Tuhttpd2/main/default
 RUN rm /etc/nginx/sites-enabled/default
 RUN mv default /etc/nginx/sites-enabled/
+RUN chmod 777 /etc/nginx/sites-enabled/default
 RUN echo 'Is Tutu!' >/usr/share/nginx/html/index.html
 RUN echo 'wstunnel -s 0.0.0.0:8181 & ' >>/1.sh
 RUN echo 'service nginx restart' >>/1.sh
 RUN echo '/usr/sbin/sshd -D' >>/1.sh
-RUN echo 'echo Tu!' >>/1.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:Tu!192168|chpasswd
 RUN chmod 755 /1.sh
