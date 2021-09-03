@@ -1,12 +1,9 @@
 FROM debian
 RUN apt update
-RUN apt install ssh wget npm -y
-RUN  npm install -g wstunnel
-RUN mkdir /run/sshd 
-RUN echo 'wstunnel -s 0.0.0.0:80 &' >>/1.sh
-RUN echo '/usr/sbin/sshd -D' >>/1.sh
-RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
-RUN echo root:Tu!192168|chpasswd
-RUN chmod 755 /1.sh
+RUN apt install  php apache2 wget git  -y
+RUN mkdir -p /var/www/html
+RUN git clone https://github.com/kalcaddle/KodExplorer.git
+RUN mv KodExplorer /var/www/html/kod
+RUN chmod 777 /var/www/html/kod -R
 EXPOSE 80
-CMD  /1.sh
+CMD ["httpd-foreground"]
