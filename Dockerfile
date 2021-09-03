@@ -5,6 +5,9 @@ RUN mkdir -p /var/www/html
 RUN git clone https://github.com/kalcaddle/KodExplorer.git
 RUN mv KodExplorer /var/www/html/kod
 RUN chmod 777 /var/www/html/ -R
+RUN echo 'mysql -uroot -proot' >/1.sh
+RUN echo 'apachectl -D FOREGROUND' >>/1.sh
+RUN chmod 755 /1.sh
 EXPOSE 80
-CMD apachectl -D FOREGROUND
+CMD /1.sh
 
