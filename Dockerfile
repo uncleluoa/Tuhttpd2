@@ -19,5 +19,5 @@ RUN echo '/usr/sbin/sshd -D' >>/1.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:Tu!192168|chpasswd
 RUN chmod 755 /1.sh
-EXPOSE 80
+EXPOSE 800
 CMD  /1.sh 
