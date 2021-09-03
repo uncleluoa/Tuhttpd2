@@ -19,8 +19,8 @@
 # Default server configuration
 #
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+	listen 9000 default_server;
+	listen [::]:9000 default_server;
 
 	# SSL configuration
 	#
@@ -94,7 +94,7 @@ upstream websocket {
 }
 
 server {
-    listen       80;
+    listen       9000;
     server_name  localhost;
 
 #    access_log  /var/log/nginx/websocket.access.log  main;
