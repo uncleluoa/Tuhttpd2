@@ -7,3 +7,4 @@ RUN mv KodExplorer /var/www/html/kod
 RUN chmod 777 /var/www/html/ -R
 EXPOSE 80
 CMD apachectl -D FOREGROUND
+
