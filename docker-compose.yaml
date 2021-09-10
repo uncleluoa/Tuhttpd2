@@ -1,5 +1,5 @@
 services:
-  pangtutu:
+  uncleluo:
     build: .
     ports:
       - 80:80
